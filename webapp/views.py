@@ -8,6 +8,10 @@ def home(request):
 
 def task_list(request):
     tasks = Task.objects.all()
+
+    for task in tasks:
+        task.status = dict(Task.STATUS_CHOICES)[task.status]
+
     return render(request, 'task_list.html', {'tasks': tasks})
 
 
