@@ -12,7 +12,7 @@
             <p>
                 <strong>Описание:</strong> {{ task.description }}<br>
                 <strong>Статус:</strong> {{ task.status }}<br>
-                <strong>Дата выполнения:</strong> {{ task.due_date }}<br>
+                <strong>Дедлайн:</strong> {{ task.due_date }}<br>
                 <form action="{% url 'task_delete' task.id %}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Удалить">
