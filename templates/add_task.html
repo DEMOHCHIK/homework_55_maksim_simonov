@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do</title>
+</head>
+<body>
+    <h1>Добавить задачу</h1>
+
+    <form method="post" action="{% url 'add_task' %}">
+        {% csrf_token %}
+        <label for="description">Описание:</label>
+        <textarea name="description" required></textarea><br><br>
+
+        <label for="date">Дедлайн:</label>
+        <input type="text" name="date" placeholder="YYYY-MM-DD"><br><br>
+
+        <label for="status">Статус:</label>
+        <select name="status" required>
+            <option value="new">Новая</option>
+            <option value="in_progress">В процессе</option>
+            <option value="completed">Завершена</option>
+        </select><br><br>
+
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
