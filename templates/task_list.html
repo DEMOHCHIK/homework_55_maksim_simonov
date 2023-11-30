@@ -13,6 +13,9 @@
                 <strong>Описание:</strong> {{ task.description }}<br>
                 <strong>Статус:</strong> {{ task.status }}<br>
                 <strong>Дедлайн:</strong> {{ task.due_date }}<br>
+
+                <a href="{% url 'task_detail' pk=task.pk %}">Подробнее</a>
+
                 <form action="{% url 'task_delete' task.id %}" method="post">
                     {% csrf_token %}
                     <input type="submit" value="Удалить">

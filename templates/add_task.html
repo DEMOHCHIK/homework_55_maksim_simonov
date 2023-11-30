@@ -10,7 +10,10 @@
     <form method="post" action="{% url 'add_task' %}">
         {% csrf_token %}
         <label for="description">Описание:</label>
-        <textarea name="description" required></textarea><br><br>
+        <input type="text" name="description" required><br><br>
+
+        <label for="full_description">Подробное описание:</label>
+        <textarea name="full_description"></textarea><br><br>
 
         <label for="date">Дедлайн:</label>
         <input type="text" name="date" placeholder="YYYY-MM-DD"><br><br>
