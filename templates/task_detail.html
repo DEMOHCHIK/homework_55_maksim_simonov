@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>To-Do</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block main %}
     <h1>Информация о задаче:</h1>
     <p>Описание: {{ task.description }}</p>
     <p>Подробное описание: {{ task.full_description }}</p>
     <p>Дедлайн: {{ task.due_date }}</p>
     <p>Статус: {{ task.status }}</p>
-</body>
-</html>
+{% endblock %}

@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>To-Do</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block menu %}<a class="nav-link" href="{% url 'add_task' %}">Add</a>{% endblock %}
+{% block main %}
     <h1>Список Моих Задач:</h1>
 
     {% if tasks %}
@@ -25,7 +21,4 @@
     {% else %}
         <p>Нет задач.</p>
     {% endif %}
-
-    <a href="/">На главную</a>
-</body>
-</html>
+{% endblock %}

@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>To-Do</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block menu %}<a class="nav-link" href="{% url 'task_list' %}">Tasks</a>{% endblock %}
+{% block main %}
     <h1>Добавить задачу</h1>
 
     <form method="post" action="{% url 'add_task' %}">
@@ -27,5 +23,4 @@
 
         <button type="submit">Добавить</button>
     </form>
-</body>
-</html>
+{% endblock %}
