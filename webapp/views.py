@@ -21,6 +21,8 @@ def add_task(request):
         due_date = request.POST['date']
         status = request.POST['status']
         full_description = request.POST['full_description']
+        if due_date == "":
+            due_date = None
 
         task = Task.objects.create(description=description, due_date=due_date, status=status, full_description=full_description)
         task.save()
