@@ -2,20 +2,14 @@
 {% block menu %}<a class="nav-link" href="{% url 'add_task' %}">Add</a>{% endblock %}
 {% block main %}
     <h1>Список Моих Задач:</h1>
-
     {% if tasks %}
         {% for task in tasks %}
             <p>
-                <strong>Описание:</strong> {{ task.description }}<br>
-                <strong>Статус:</strong> {{ task.status }}<br>
-                <strong>Дедлайн:</strong> {{ task.due_date }}<br>
+                <b>Описание:</b> {{ task.description }}<br>
+                <b>Статус:</b> {{ task.status }}<br>
+                <b>Дедлайн:</b> {{ task.due_date }}<br>
 
                 <a href="{% url 'task_detail' pk=task.pk %}">Подробнее</a>
-
-                <form action="{% url 'task_delete' task.id %}" method="post">
-                    {% csrf_token %}
-                    <input type="submit" value="Удалить">
-                </form>
             </p>
         {% endfor %}
     {% else %}

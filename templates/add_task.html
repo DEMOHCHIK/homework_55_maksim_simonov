@@ -2,19 +2,18 @@
 {% block menu %}<a class="nav-link" href="{% url 'task_list' %}">Tasks</a>{% endblock %}
 {% block main %}
     <h1>Добавить задачу</h1>
-
     <form method="post" action="{% url 'add_task' %}">
         {% csrf_token %}
-        <label for="description">Описание:</label>
+        <label for="description">Описание:</label><br>
         <input type="text" name="description" required><br><br>
 
-        <label for="full_description">Подробное описание:</label>
+        <label for="full_description">Подробное описание:</label><br>
         <textarea name="full_description"></textarea><br><br>
 
-        <label for="date">Дедлайн:</label>
+        <label for="date">Дедлайн:</label><br>
         <input type="text" name="date" placeholder="YYYY-MM-DD"><br><br>
 
-        <label for="status">Статус:</label>
+        <label for="status">Статус:</label><br>
         <select name="status" required>
             <option value="new">Новая</option>
             <option value="in_progress">В процессе</option>

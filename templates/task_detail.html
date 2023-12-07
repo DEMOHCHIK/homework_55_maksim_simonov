@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
+{% block menu %}<a class="nav-link" href="{% url 'task_list' %}">Tasks</a>{% endblock %}
 {% block main %}
     <h1>Информация о задаче:</h1>
-    <p>Описание: {{ task.description }}</p>
-    <p>Подробное описание: {{ task.full_description }}</p>
-    <p>Дедлайн: {{ task.due_date }}</p>
-    <p>Статус: {{ task.status }}</p>
+    <p><b>Описание:</b> {{ task.description }}</p>
+    <p><b>Подробное описание:</b> {{ task.full_description }}</p>
+    <p><b>Дедлайн:</b> {{ task.due_date }}</p>
+    <p><b>Статус:</b> {{ task.status }}</p>
+    <a href="{% url 'task_delete' task.id %}">Удалить</a>
 {% endblock %}

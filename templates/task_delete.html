@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block main %}
+    <p>Вы уверены, что хотите удалить задачу "{{ task.description }}"?</p>
+    <form method="post" action="{% url 'task_delete' task.id %}">
+        {% csrf_token %}
+        <button class="btn btn-primary me-3" type="submit">Удалить</button>
+        <a class="btn btn-danger" href="{% url 'task_detail' pk=task.pk %}">Отмена</a>
+    </form>
+{% endblock %}
