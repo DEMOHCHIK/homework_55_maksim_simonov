@@ -6,5 +6,6 @@
     <p><b>Подробное описание:</b> {{ task.full_description }}</p>
     <p><b>Дедлайн:</b> {{ task.due_date }}</p>
     <p><b>Статус:</b> {{ task.status }}</p>
-    <a href="{% url 'task_delete' task.id %}">Удалить</a>
+    <a class="btn btn-primary" href="{% url 'edit_task' task.id %}">Изменить</a>
+    <a class="btn btn-danger" href="{% url 'task_delete' task.id %}">Удалить</a>
 {% endblock %}
